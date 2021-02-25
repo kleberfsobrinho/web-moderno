@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <!-- Atributos com "data-" são tratados de maneira diferenciada, como por exemplo o "data-urgencia" / dataset -->
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino)
+        console.log('getAttribute', lista.getAttribute('destino')) // obter atributo
+        console.log('hasAttribute', lista.hasAttribute('destino')) // tem o atributo?
+        lista.setAttribute('destino', 'empresa') // modificar e |
+        lista.setAttribute('status', 'aberto') // | criar atributos
+        lista.removeAttribute('destino') // remove atributos
+        console.log(lista.dataset) // retona um DOMStringMap com os atributos personalizados que possuem "data-" antes
+        console.log(lista.dataset.urgencia) // retorna o valor mesmo sendo um atributo personalizado
+        lista.dataset.urgencia = 4 // altera o valor do atributo
+        console.log(lista.getAttribute('data-urgencia'))
+
+        // cuidado
+        const label = document.querySelector('label')
+        console.log(label.for)
+        console.log(label.htmlFor)
+        console.log(label.getAttribute('for'))
+
+    </script>
+</body>
+
+</html>
