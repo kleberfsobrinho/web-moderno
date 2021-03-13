@@ -4,7 +4,7 @@
             mensagem: 'Em breve!',
             horario: '23:59:59'
         }, opcoes)
-        
+
         const horaDezena = $('<span class="digito">').html('0')
         const horaUnidade = $('<span class="digito">').html('0')
         const minutoDezena = $('<span class="digito">').html('0')
@@ -33,7 +33,7 @@
             const diferencaEmMili = alvo.getTime() - agora.getTime()
 
             if (diferencaEmMili >= 0) {
-                const diferenca = regex.exec(new Date(diferencaEmMili).toISOString)
+                const diferenca = regex.exec(new Date(diferencaEmMili).toISOString())
 
                 // console.log(diferenca)
 
