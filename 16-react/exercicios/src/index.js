@@ -9,10 +9,17 @@ import ReactDOM from 'react-dom'
 
 // import Multi, { BoaNoite } from './componentes/Multiplos'
 
-import Saudacao from './componentes/Saudacao'
+// import Saudacao from './componentes/Saudacao'
+
+import Pai from './componentes/Pai'
+import Filho from './componentes/Filho'
 
 ReactDOM.render(
     <div>
-        <Saudacao tipo="Boa dia" nome="João" />
+        <Pai nome="João" sobrenome="Silva">
+            <Filho nome="Pedro"/>
+            {/* <Filho nome="Paulo" sobrenome="Silva"/>
+            <Filho nome="Carla" sobrenome="Silva"/> */}
+        </Pai>
     </div>
 , document.getElementById('root'))
